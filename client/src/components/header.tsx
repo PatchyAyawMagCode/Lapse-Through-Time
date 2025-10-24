@@ -27,28 +27,27 @@ export function Header() {
           </h1>
         </div>
 
-        <nav className="hidden md:flex items-center gap-1">
-          <button
-            onClick={() => scrollToSection("home")}
-            className="relative text-sm font-medium text-foreground/80 hover:text-foreground px-4 py-2 rounded-lg transition-all duration-200 hover:bg-accent/50 group flex items-center gap-2"
-            data-testid="link-home"
-          >
-            <Home className="h-4 w-4" />
-            Home
-            <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-8"></span>
-          </button>
-          <button
-            onClick={() => scrollToSection("journey")}
-            className="relative text-sm font-medium text-foreground/80 hover:text-foreground px-4 py-2 rounded-lg transition-all duration-200 hover:bg-accent/50 group flex items-center gap-2"
-            data-testid="link-visualize"
-          >
-            <Eye className="h-4 w-4" />
-            Visualize
-            <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-8"></span>
-          </button>
-        </nav>
-
         <div className="flex items-center gap-2">
+          <nav className="hidden md:flex items-center gap-1">
+            <button
+              onClick={() => scrollToSection("home")}
+              className="relative text-sm font-medium text-foreground/80 hover:text-foreground px-4 py-2 rounded-lg transition-all duration-200 hover:bg-accent/50 group flex items-center gap-2"
+              data-testid="link-home"
+            >
+              <Home className="h-4 w-4" />
+              Home
+              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-8"></span>
+            </button>
+            <button
+              onClick={() => scrollToSection("journey")}
+              className="relative text-sm font-medium text-foreground/80 hover:text-foreground px-4 py-2 rounded-lg transition-all duration-200 hover:bg-accent/50 group flex items-center gap-2"
+              data-testid="link-visualize"
+            >
+              <Eye className="h-4 w-4" />
+              Visualize
+              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-8"></span>
+            </button>
+          </nav>
           <Button
             size="icon"
             variant="ghost"
