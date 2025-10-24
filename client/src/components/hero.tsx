@@ -15,15 +15,12 @@ export function Hero() {
       className="relative min-h-[90vh] flex items-center justify-center overflow-hidden"
     >
       <div
-        className="absolute inset-0 bg-gradient-to-br from-primary via-[#c026d3] to-primary"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/assets/hero-background.gif')" }}
         aria-hidden="true"
       />
       <div
-        className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent_50%)]"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(255,255,255,0.08),transparent_50%)]"
+        className="absolute inset-0 bg-black/40"
         aria-hidden="true"
       />
 
