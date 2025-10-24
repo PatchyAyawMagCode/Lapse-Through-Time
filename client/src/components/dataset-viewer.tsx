@@ -45,20 +45,19 @@ export function DatasetViewer({
       </div>
 
       <div className="bg-muted rounded-lg aspect-video flex items-center justify-center mb-8 relative overflow-hidden">
-        {placeholderImage ? (
-          <img
-            src={placeholderImage}
-            alt={title}
-            className="w-full h-full object-cover"
+        <video
+          className="w-full h-full object-cover"
+          loop
+          muted
+          playsInline
+          autoPlay
+          data-testid="dataset-video"
+        >
+          <source
+            src="/assets/YTDown.com_YouTube_1-5-YEARS-4-minutes-Time-lapse-compilati_Media_hTPjZ-yt_3Y_001_1080p_1761317555814.mp4"
+            type="video/mp4"
           />
-        ) : (
-          <div className="text-center">
-            <div className="w-24 h-24 mx-auto mb-4 flex items-center justify-center">
-              <div className="w-0 h-0 border-l-[40px] border-l-foreground border-t-[25px] border-t-transparent border-b-[25px] border-b-transparent" />
-            </div>
-            <p className="text-sm text-muted-foreground">Image/Video Holder</p>
-          </div>
-        )}
+        </video>
       </div>
 
       <div className="mb-12">
