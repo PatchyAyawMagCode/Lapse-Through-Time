@@ -1,4 +1,4 @@
-import { Moon, Sun, Menu, X } from "lucide-react";
+import { Moon, Sun, Menu, X, Home, Eye } from "lucide-react";
 import { useTheme } from "./theme-provider";
 import { Button } from "./ui/button";
 import { useState } from "react";
@@ -30,26 +30,20 @@ export function Header() {
         <nav className="hidden md:flex items-center gap-1">
           <button
             onClick={() => scrollToSection("home")}
-            className="relative text-sm font-medium text-foreground/80 hover:text-foreground px-4 py-2 rounded-lg transition-all duration-200 hover:bg-accent/50 group"
+            className="relative text-sm font-medium text-foreground/80 hover:text-foreground px-4 py-2 rounded-lg transition-all duration-200 hover:bg-accent/50 group flex items-center gap-2"
             data-testid="link-home"
           >
+            <Home className="h-4 w-4" />
             Home
             <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-8"></span>
           </button>
           <button
             onClick={() => scrollToSection("journey")}
-            className="relative text-sm font-medium text-foreground/80 hover:text-foreground px-4 py-2 rounded-lg transition-all duration-200 hover:bg-accent/50 group"
-            data-testid="link-timeline"
+            className="relative text-sm font-medium text-foreground/80 hover:text-foreground px-4 py-2 rounded-lg transition-all duration-200 hover:bg-accent/50 group flex items-center gap-2"
+            data-testid="link-visualize"
           >
-            Timeline
-            <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-8"></span>
-          </button>
-          <button
-            onClick={() => scrollToSection("explore")}
-            className="relative text-sm font-medium text-foreground/80 hover:text-foreground px-4 py-2 rounded-lg transition-all duration-200 hover:bg-accent/50 group"
-            data-testid="link-explore"
-          >
-            Explore
+            <Eye className="h-4 w-4" />
+            Visualize
             <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-8"></span>
           </button>
         </nav>
@@ -90,24 +84,19 @@ export function Header() {
           <nav className="flex flex-col p-4 gap-2">
             <button
               onClick={() => scrollToSection("home")}
-              className="text-left text-sm font-medium text-foreground/80 hover:text-foreground px-4 py-3 rounded-lg transition-all duration-200 hover:bg-accent/50"
+              className="text-left text-sm font-medium text-foreground/80 hover:text-foreground px-4 py-3 rounded-lg transition-all duration-200 hover:bg-accent/50 flex items-center gap-2"
               data-testid="link-home-mobile"
             >
+              <Home className="h-4 w-4" />
               Home
             </button>
             <button
               onClick={() => scrollToSection("journey")}
-              className="text-left text-sm font-medium text-foreground/80 hover:text-foreground px-4 py-3 rounded-lg transition-all duration-200 hover:bg-accent/50"
-              data-testid="link-timeline-mobile"
+              className="text-left text-sm font-medium text-foreground/80 hover:text-foreground px-4 py-3 rounded-lg transition-all duration-200 hover:bg-accent/50 flex items-center gap-2"
+              data-testid="link-visualize-mobile"
             >
-              Timeline
-            </button>
-            <button
-              onClick={() => scrollToSection("explore")}
-              className="text-left text-sm font-medium text-foreground/80 hover:text-foreground px-4 py-3 rounded-lg transition-all duration-200 hover:bg-accent/50"
-              data-testid="link-explore-mobile"
-            >
-              Explore
+              <Eye className="h-4 w-4" />
+              Visualize
             </button>
           </nav>
         </div>
