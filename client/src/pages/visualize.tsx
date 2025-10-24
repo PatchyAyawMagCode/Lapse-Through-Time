@@ -12,6 +12,7 @@ export default function Visualize() {
       icon: Cpu,
       color: "bg-blue-500",
       hoverColor: "hover:border-blue-500",
+      hoverTextColor: "group-hover:text-blue-500",
     },
     {
       id: "biology",
@@ -20,6 +21,7 @@ export default function Visualize() {
       icon: Dna,
       color: "bg-amber-500",
       hoverColor: "hover:border-amber-500",
+      hoverTextColor: "group-hover:text-amber-500",
     },
     {
       id: "nature",
@@ -28,6 +30,7 @@ export default function Visualize() {
       icon: Leaf,
       color: "bg-green-500",
       hoverColor: "hover:border-green-500",
+      hoverTextColor: "group-hover:text-green-500",
     },
     {
       id: "architectures",
@@ -36,6 +39,7 @@ export default function Visualize() {
       icon: Building2,
       color: "bg-gray-600",
       hoverColor: "hover:border-gray-600",
+      hoverTextColor: "group-hover:text-gray-600",
     },
   ];
 
@@ -79,7 +83,7 @@ export default function Visualize() {
                       <IconComponent className="h-8 w-8 text-white" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-xl font-semibold mb-1 group-hover:text-purple-600 transition-colors">
+                      <h3 className={`text-xl font-semibold mb-1 transition-colors ${dataset.hoverTextColor}`}>
                         {dataset.title}
                       </h3>
                       <p className="text-sm text-muted-foreground">
