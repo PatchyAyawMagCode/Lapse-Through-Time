@@ -42,17 +42,27 @@ export default function Visualize() {
   return (
     <div className="min-h-screen">
       <Header />
-      <main className="pt-20 min-h-[calc(100vh-4rem)]">
-        <div className="max-w-7xl mx-auto px-6 py-20">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+      <main className="pt-16">
+        <section className="relative min-h-[40vh] flex items-center justify-center overflow-hidden">
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: "url('/assets/visualize-hero.gif')",
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70" />
+          
+          <div className="relative z-10 text-center px-6 py-16">
+            <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4 text-white">
               Choose Your Journey
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-white/90 max-w-2xl mx-auto">
               Select a dataset to explore different aspects of historical change
             </p>
           </div>
+        </section>
 
+        <div className="max-w-7xl mx-auto px-6 py-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
             {datasets.map((dataset) => {
               const IconComponent = dataset.icon;
@@ -60,6 +70,7 @@ export default function Visualize() {
                 <Card
                   key={dataset.id}
                   className={`p-6 cursor-pointer transition-all duration-300 hover:shadow-xl border-2 ${dataset.hoverColor} group`}
+                  data-testid={`card-dataset-${dataset.id}`}
                 >
                   <div className="flex items-center gap-4">
                     <div
