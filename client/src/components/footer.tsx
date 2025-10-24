@@ -37,16 +37,9 @@ export function Footer() {
               <button
                 onClick={() => scrollToSection("journey")}
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left hover-elevate active-elevate-2 rounded-md px-2 py-1 -ml-2"
-                data-testid="footer-link-timeline"
+                data-testid="footer-link-visualize"
               >
-                Timeline
-              </button>
-              <button
-                onClick={() => scrollToSection("explore")}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left hover-elevate active-elevate-2 rounded-md px-2 py-1 -ml-2"
-                data-testid="footer-link-explore"
-              >
-                Explore
+                Visualize
               </button>
             </nav>
           </div>
