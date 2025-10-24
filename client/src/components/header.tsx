@@ -1,4 +1,4 @@
-import { Moon, Sun, Menu, X, Home, Eye, Clock } from "lucide-react";
+import { Moon, Sun, Menu, X, Home, Eye } from "lucide-react";
 import { useTheme } from "./theme-provider";
 import { Button } from "./ui/button";
 import { useState } from "react";
@@ -19,13 +19,11 @@ export function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/40 bg-background/95 backdrop-blur-2xl shadow-sm">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <img
-            src="/assets/logo.png"
-            alt="Logo"
-            className="w-8 h-8 object-contain"
-          />
-          <h1 className="font-serif text-xl font-bold tracking-tight">
-            A Lapse Through Time
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center">
+            <span className="text-primary-foreground font-bold text-sm">LT</span>
+          </div>
+          <h1 className="text-lg font-serif font-bold tracking-tight bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+            Lapse Through Time
           </h1>
         </div>
 
@@ -103,51 +101,5 @@ export function Header() {
         </div>
       )}
     </header>
-  );
-}
-
-// Footer component (assuming it exists in the same file or is imported)
-export function Footer() {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  return (
-    <footer className="mt-24 border-t border-border/40 bg-background/95 backdrop-blur-2xl py-12">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
-        <div className="flex items-center gap-3">
-          <img
-            src="/assets/logo.png"
-            alt="Logo"
-            className="w-8 h-8 object-contain"
-          />
-          <h1 className="font-serif text-xl font-bold tracking-tight">
-            A Lapse Through Time
-          </h1>
-        </div>
-        <div>
-          <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-          <nav className="flex flex-col gap-2">
-            <button
-              onClick={() => scrollToSection("home")}
-              className="text-foreground/80 hover:text-foreground transition-all duration-200"
-              data-testid="footer-link-home"
-            >
-              Home
-            </button>
-            <button
-              onClick={() => scrollToSection("journey")}
-              className="text-foreground/80 hover:text-foreground transition-all duration-200"
-              data-testid="footer-link-visualize"
-            >
-              Visualize
-            </button>
-          </nav>
-        </div>
-      </div>
-    </footer>
   );
 }
