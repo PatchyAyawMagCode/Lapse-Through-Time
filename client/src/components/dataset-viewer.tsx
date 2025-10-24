@@ -76,7 +76,6 @@ export function DatasetViewer({
             size="icon"
             variant="ghost"
             onClick={handleReset}
-            className="rounded-full"
             data-testid="button-reset"
           >
             <RotateCcw className="h-5 w-5" />
@@ -84,8 +83,9 @@ export function DatasetViewer({
 
           <Button
             size="default"
-            className="rounded-full bg-primary text-primary-foreground min-w-[100px]"
+            variant="default"
             onClick={handlePlayPause}
+            className="min-w-[100px]"
             data-testid="button-play-pause"
           >
             {isPlaying ? (
@@ -106,8 +106,8 @@ export function DatasetViewer({
               <Button
                 key={speedOption}
                 size="sm"
-                variant={speed === speedOption ? "default" : "outline"}
-                className="rounded-md min-w-[60px]"
+                variant={speed === speedOption ? "default" : "secondary"}
+                className="min-w-[60px]"
                 onClick={() => handleSpeedChange(speedOption)}
                 data-testid={`button-speed-${speedOption}x`}
               >
