@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { Link } from "wouter";
 
 export function CTASection() {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.3 });
@@ -39,15 +40,16 @@ export function CTASection() {
           Start your journey through time and discover how the world has changed
           throughout the decades
         </p>
-        <Button
-          size="lg"
-          className="rounded-full bg-white text-primary shadow-2xl hover-elevate active-elevate-2 min-w-[200px]"
-          onClick={scrollToTop}
-          data-testid="button-get-started"
-        >
-          Get Started
-          <ArrowRight className="ml-2 h-5 w-5" />
-        </Button>
+        <Link href="/visualize">
+          <Button
+            size="lg"
+            className="rounded-full bg-white text-primary shadow-2xl hover-elevate active-elevate-2 min-w-[200px]"
+            data-testid="button-get-started"
+          >
+            Get Started
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </Button>
+        </Link>
       </div>
     </section>
   );

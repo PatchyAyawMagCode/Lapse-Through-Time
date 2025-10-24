@@ -1,5 +1,6 @@
 import { ArrowRight, Play } from "lucide-react";
 import { Button } from "./ui/button";
+import { Link } from "wouter";
 
 export function Hero() {
   const scrollToSection = (id: string) => {
@@ -35,16 +36,17 @@ export function Hero() {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-          <Button
-            size="lg"
-            variant="outline"
-            className="rounded-full backdrop-blur-xl bg-white/25 border border-white/40 text-white shadow-2xl hover-elevate active-elevate-2 min-w-[200px]"
-            onClick={() => scrollToSection("journey")}
-            data-testid="button-start-exploring"
-          >
-            <Play className="mr-2 h-5 w-5" />
-            Start Exploring
-          </Button>
+          <Link href="/visualize">
+            <Button
+              size="lg"
+              variant="outline"
+              className="rounded-full backdrop-blur-xl bg-white/25 border border-white/40 text-white shadow-2xl hover-elevate active-elevate-2 min-w-[200px]"
+              data-testid="button-start-exploring"
+            >
+              <Play className="mr-2 h-5 w-5" />
+              Start Exploring
+            </Button>
+          </Link>
           <Button
             size="lg"
             variant="outline"
