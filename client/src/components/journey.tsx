@@ -21,6 +21,12 @@ const features = [
     description:
       "Explore diverse datasets including technology evolution, fashion trends, urban development, and more.",
   },
+  {
+    icon: Sparkles,
+    title: "Immersive Visualization",
+    description:
+      "Dive into stunning timelapse sequences that showcase the evolution of landscapes, cities, and cultures in breathtaking detail.",
+  },
 ];
 
 function FeatureCard({
@@ -86,7 +92,7 @@ export function Journey() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {features.map((feature, index) => (
             <FeatureCard key={feature.title} {...feature} index={index} />
           ))}
