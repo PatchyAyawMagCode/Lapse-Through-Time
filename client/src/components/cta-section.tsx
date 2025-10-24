@@ -13,10 +13,14 @@ export function CTASection() {
     <section
       id="explore"
       ref={ref}
-      className="relative py-20 md:py-32 overflow-hidden"
+      className="relative py-24 md:py-40 overflow-hidden"
     >
       <div
-        className="absolute inset-0 bg-gradient-to-br from-primary via-accent to-primary opacity-90"
+        className="absolute inset-0 bg-gradient-to-br from-primary via-[#c026d3] to-primary"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.15),transparent_50%)]"
         aria-hidden="true"
       />
 
@@ -27,16 +31,16 @@ export function CTASection() {
             : "opacity-0 translate-y-8"
         }`}
       >
-        <h2 className="font-serif font-semibold text-3xl md:text-4xl text-white mb-6" data-testid="heading-cta">
+        <h2 className="font-serif font-semibold text-4xl md:text-5xl text-white mb-8 tracking-tight" data-testid="heading-cta">
           Ready to Explore?
         </h2>
-        <p className="text-base md:text-lg text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-xl md:text-2xl text-white/95 mb-12 max-w-2xl mx-auto leading-relaxed font-light">
           Start your journey through time and discover how the world has changed
           throughout the decades
         </p>
         <Button
           size="lg"
-          className="rounded-full bg-white text-primary shadow-xl hover-elevate active-elevate-2"
+          className="rounded-full bg-white text-primary shadow-2xl hover-elevate active-elevate-2 min-w-[200px]"
           onClick={scrollToTop}
           data-testid="button-get-started"
         >

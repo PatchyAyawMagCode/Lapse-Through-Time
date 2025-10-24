@@ -12,28 +12,36 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-[85vh] flex items-center justify-center overflow-hidden"
+      className="relative min-h-[90vh] flex items-center justify-center overflow-hidden"
     >
       <div
-        className="absolute inset-0 bg-gradient-to-br from-primary via-accent to-primary opacity-90"
+        className="absolute inset-0 bg-gradient-to-br from-primary via-[#c026d3] to-primary"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent_50%)]"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(255,255,255,0.08),transparent_50%)]"
         aria-hidden="true"
       />
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-        <h1 className="font-serif font-bold text-4xl md:text-5xl lg:text-6xl text-white mb-6 animate-float">
+        <h1 className="font-serif font-bold text-5xl md:text-6xl lg:text-7xl text-white mb-8 animate-float tracking-tight">
           A Lapse Through Time
         </h1>
-        <p className="text-lg md:text-xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-xl md:text-2xl text-white/95 mb-14 max-w-3xl mx-auto leading-relaxed font-light">
           Experience history through interactive visualizations. Navigate
           seamlessly through decades of change with smooth animations and
           rich storytelling.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
           <Button
             size="lg"
             variant="outline"
-            className="rounded-full backdrop-blur-md bg-white/20 border-2 border-white/30 text-white shadow-xl hover-elevate active-elevate-2"
+            className="rounded-full backdrop-blur-xl bg-white/25 border border-white/40 text-white shadow-2xl hover-elevate active-elevate-2 min-w-[200px]"
             onClick={() => scrollToSection("journey")}
             data-testid="button-start-exploring"
           >
@@ -43,7 +51,7 @@ export function Hero() {
           <Button
             size="lg"
             variant="outline"
-            className="rounded-full backdrop-blur-md bg-white/10 border-2 border-white/40 text-white shadow-lg hover-elevate active-elevate-2"
+            className="rounded-full backdrop-blur-xl bg-white/10 border border-white/30 text-white shadow-xl hover-elevate active-elevate-2 min-w-[200px]"
             onClick={() => scrollToSection("video")}
             data-testid="button-learn-more"
           >

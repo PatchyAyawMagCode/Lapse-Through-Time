@@ -84,20 +84,22 @@ export function VideoSection() {
     <section
       id="video"
       ref={ref}
-      className="py-20 md:py-32 bg-gradient-to-br from-primary/5 via-accent/5 to-primary/5"
+      className="py-24 md:py-40 bg-gradient-to-br from-primary/8 via-accent/8 to-primary/8 relative overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-12">
-          <h2 className="font-serif font-semibold text-3xl md:text-4xl mb-4" data-testid="heading-video">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(168,85,247,0.1),transparent_70%)]" aria-hidden="true" />
+      
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="text-center mb-16">
+          <h2 className="font-serif font-semibold text-4xl md:text-5xl mb-6 tracking-tight" data-testid="heading-video">
             Watch Time Unfold
           </h2>
-          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Experience the passage of time through our curated timelapse collection
           </p>
         </div>
 
         <div className="max-w-6xl mx-auto">
-          <div className="relative group rounded-xl overflow-hidden shadow-2xl">
+          <div className="relative group rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/10">
             <video
               ref={videoRef}
               className="w-full aspect-video object-cover"
