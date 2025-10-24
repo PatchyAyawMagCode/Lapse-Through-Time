@@ -23,32 +23,29 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-serif font-semibold text-xl mb-5 tracking-tight" data-testid="footer-links-heading">
+            <h3 className="font-serif font-semibold text-xl mb-5 tracking-tight">
               Quick Links
             </h3>
-            <nav className="flex flex-col gap-4">
-              <button
-                onClick={() => scrollToSection("home")}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left hover-elevate active-elevate-2 rounded-md px-2 py-1 -ml-2"
-                data-testid="footer-link-home"
-              >
-                Home
-              </button>
-              <button
-                onClick={() => scrollToSection("journey")}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left hover-elevate active-elevate-2 rounded-md px-2 py-1 -ml-2"
-                data-testid="footer-link-timeline"
-              >
-                Timeline
-              </button>
-              <button
-                onClick={() => scrollToSection("explore")}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left hover-elevate active-elevate-2 rounded-md px-2 py-1 -ml-2"
-                data-testid="footer-link-explore"
-              >
-                Explore
-              </button>
-            </nav>
+            <ul className="space-y-3 text-sm">
+              <li>
+                <button
+                  onClick={() => scrollToSection("home")}
+                  className="text-muted-foreground hover:text-primary transition-colors duration-300"
+                  data-testid="link-home"
+                >
+                  Home
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => scrollToSection("journey")}
+                  className="text-muted-foreground hover:text-primary transition-colors duration-300"
+                  data-testid="link-visualize"
+                >
+                  Visualize
+                </button>
+              </li>
+            </ul>
           </div>
 
           <div>
