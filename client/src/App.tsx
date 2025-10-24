@@ -6,6 +6,10 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/theme-provider";
 import Home from "@/pages/home";
 import Visualize from "@/pages/visualize";
+import Technology from "@/pages/technology";
+import Biology from "@/pages/biology";
+import Nature from "@/pages/nature";
+import Architectures from "@/pages/architectures";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -13,6 +17,10 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/visualize" component={Visualize} />
+      <Route path="/dataset/technology" component={Technology} />
+      <Route path="/dataset/biology" component={Biology} />
+      <Route path="/dataset/nature" component={Nature} />
+      <Route path="/dataset/architectures" component={Architectures} />
       <Route component={NotFound} />
     </Switch>
   );

@@ -2,6 +2,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Card } from "@/components/ui/card";
 import { Cpu, Dna, Leaf, Building2 } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Visualize() {
   const datasets = [
@@ -71,27 +72,28 @@ export default function Visualize() {
             {datasets.map((dataset) => {
               const IconComponent = dataset.icon;
               return (
-                <Card
-                  key={dataset.id}
-                  className={`p-6 cursor-pointer transition-all duration-300 hover:shadow-xl border-2 ${dataset.hoverColor} group`}
-                  data-testid={`card-dataset-${dataset.id}`}
-                >
-                  <div className="flex items-center gap-4">
-                    <div
-                      className={`${dataset.color} p-4 rounded-xl transition-transform duration-300 group-hover:scale-110`}
-                    >
-                      <IconComponent className="h-8 w-8 text-white" />
+                <Link key={dataset.id} href={`/dataset/${dataset.id}`}>
+                  <Card
+                    className={`p-6 cursor-pointer transition-all duration-300 hover:shadow-xl border-2 ${dataset.hoverColor} group`}
+                    data-testid={`card-dataset-${dataset.id}`}
+                  >
+                    <div className="flex items-center gap-4">
+                      <div
+                        className={`${dataset.color} p-4 rounded-xl transition-transform duration-300 group-hover:scale-110`}
+                      >
+                        <IconComponent className="h-8 w-8 text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className={`text-xl font-semibold mb-1 transition-colors ${dataset.hoverTextColor}`}>
+                          {dataset.title}
+                        </h3>
+                        <p className="text-sm text-muted-foreground">
+                          {dataset.description}
+                        </p>
+                      </div>
                     </div>
-                    <div className="flex-1">
-                      <h3 className={`text-xl font-semibold mb-1 transition-colors ${dataset.hoverTextColor}`}>
-                        {dataset.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground">
-                        {dataset.description}
-                      </p>
-                    </div>
-                  </div>
-                </Card>
+                  </Card>
+                </Link>
               );
             })}
           </div>
