@@ -2,10 +2,12 @@ import { Moon, Sun, Menu, X, Home, Eye } from "lucide-react";
 import { useTheme } from "./theme-provider";
 import { Button } from "./ui/button";
 import { useState } from "react";
+import { Link, useLocation } from "wouter";
 
 export function Header() {
   const { theme, toggleTheme } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [location] = useLocation();
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -31,24 +33,24 @@ export function Header() {
 
         <div className="flex items-center gap-2">
           <nav className="hidden md:flex items-center gap-1">
-            <button
-              onClick={() => scrollToSection("home")}
+            <Link
+              href="/"
               className="relative text-sm font-medium text-foreground/80 hover:text-foreground px-4 py-2 rounded-lg transition-all duration-200 hover:bg-accent/50 group flex items-center gap-2"
               data-testid="link-home"
             >
               <Home className="h-4 w-4" />
               Home
-              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-8"></span>
-            </button>
-            <button
-              onClick={() => scrollToSection("journey")}
+              <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-primary transition-all duration-200 ${location === "/" ? "w-8" : "w-0 group-hover:w-8"}`}></span>
+            </Link>
+            <Link
+              href="/visualize"
               className="relative text-sm font-medium text-foreground/80 hover:text-foreground px-4 py-2 rounded-lg transition-all duration-200 hover:bg-accent/50 group flex items-center gap-2"
               data-testid="link-visualize"
             >
               <Eye className="h-4 w-4" />
               Visualize
-              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-8"></span>
-            </button>
+              <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-primary transition-all duration-200 ${location === "/visualize" ? "w-8" : "w-0 group-hover:w-8"}`}></span>
+            </Link>
           </nav>
           <Button
             size="icon"
@@ -83,22 +85,24 @@ export function Header() {
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-border/40 bg-background/95 backdrop-blur-2xl">
           <nav className="flex flex-col p-4 gap-2">
-            <button
-              onClick={() => scrollToSection("home")}
+            <Link
+              href="/"
+              onClick={() => setMobileMenuOpen(false)}
               className="text-left text-sm font-medium text-foreground/80 hover:text-foreground px-4 py-3 rounded-lg transition-all duration-200 hover:bg-accent/50 flex items-center gap-2"
               data-testid="link-home-mobile"
             >
               <Home className="h-4 w-4" />
               Home
-            </button>
-            <button
-              onClick={() => scrollToSection("journey")}
+            </Link>
+            <Link
+              href="/visualize"
+              onClick={() => setMobileMenuOpen(false)}
               className="text-left text-sm font-medium text-foreground/80 hover:text-foreground px-4 py-3 rounded-lg transition-all duration-200 hover:bg-accent/50 flex items-center gap-2"
               data-testid="link-visualize-mobile"
             >
               <Eye className="h-4 w-4" />
               Visualize
-            </button>
+            </Link>
           </nav>
         </div>
       )}
